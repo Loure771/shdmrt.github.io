@@ -166,7 +166,7 @@ input[type="submit"]:active{
     
     .box{
         display: flex;
-        width: 70%;
+        width: 350px;
         flex-direction: column;
         justify-content: center;
         align-items: center;

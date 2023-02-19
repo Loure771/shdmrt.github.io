@@ -1,0 +1,339 @@
+*{
+ margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Anton', sans-serif;
+font-family: 'Bakbak One', cursive;
+font-family: 'Coda Caption', sans-serif;
+font-family: 'Days One', sans-serif;
+font-family: 'M PLUS 1', sans-serif;
+font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #1f242d;
+    color: #fff;
+}
+
+.header{
+    background-color: #1f242d;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo{
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar a{
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: 0.3s;
+    opacity: 0;
+    animation: slideTop 0.5s ease forwards;
+    animation-delay: calc(0.2s * var(--i))
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: #0ef;
+}
+
+
+@keyframes slideRight{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.contact{
+    position: relative;
+    min-height: 100vh;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact .content{
+    max-width: 800px;
+    text-align: center;
+}
+
+.contact .content h2{
+    font-size: 36px;
+    font-weight: 500;
+    color:#fff;
+}
+
+.contact .content p{
+    font-weight: 300;color: #fff;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.container .contactInfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .contactInfo .box1{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+
+.container .contactInfo .box1 .icon{
+    color: #1f242f;
+    min-width: 60px;
+    height: 60px;
+    background: #0ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+    opacity: 0;
+    animation: slideTop 0.5s ease forwards;
+    animation-delay: calc(0.2s * var(--i))
+}
+
+.container .contactInfo .box1 .text {
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #fff;
+    flex-direction: column;
+    font-weight: 300;
+}
+
+.container .contactInfo .box1 .text h3{
+    font-weight: 500;
+    color: #45f3ff;
+}
+
+.box{
+    position: relative;
+    width: 750px;
+    height: 420px;
+    background: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.box:before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 750px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,#45f3ff,#45f3ff);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+
+.box:after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 750px;
+    height: 420px;
+    background: linear-gradient(0deg,transparent,#45f3ff,#45f3ff);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.form{
+    position: absolute;
+    inset:2px;
+    border-radius: 8px;
+    background: #28292d;
+    z-index: 10;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form h2{
+    color: #45f3ff;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+.inputBox{
+    margin-left: 38px;
+    position: relative;
+    width: 500px;
+    margin-top: 35px;
+}
+
+.inputBox textarea,
+.inputBox input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    z-index: 10;
+}
+
+.inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    font-size: 1em;
+    color: #8f8f8f;
+    pointer-events: none;
+    letter-spacing: 0.05s;
+    transition: 0.5;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span
+{
+    color: #45f3ff;
+    transform: translateX(0px)translateY(-34px);
+    font-size: 0.75em;
+}
+
+.inputBox textarea:valid ~ span,
+.inputBox textarea:focus ~ span{
+    color: #45f3ff;
+    transform: translateX(0px)translateY(-25px);
+    font-size: 0.75em;
+}
+
+.inputBox i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #45f3ff;
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+}
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i{
+    height: 44px;
+}
+
+.inputBox textarea:valid ~ i,
+.inputBox textarea:focus ~ i{
+    height: 59px;
+}
+
+input[type="submit"]{
+    margin-left: 38px;
+    border: none;
+    outline: none;
+    background: #45f3ff;
+    padding: 11px 25px;
+    width: 500px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+input[type="submit"]:active{
+    opacity: 0.8;
+}
+
+/*telefon görünümü */
+
+@media only screen and (max-width:768px){
+    
+    .logo{display: none;}
+    
+    .navbar a{margin-left: 20px;}
+    
+    .box{
+        position: absolute;
+        top: 600px;
+        width: 370px;
+    }
+    
+    input[type="submit"]{
+        width: 300px;
+        margin-left: -6px;
+    }
+    
+    .inputBox{
+        width: 300px;
+        margin-left: -6px;
+    }
+    
+    .box1 .text{
+        white-space: nowrap;
+        
+    }
+    .contactInfo{
+        margin-right: 220px;
+    }
+    
+    .content{
+        margin-top: 50px;
+    }
+}

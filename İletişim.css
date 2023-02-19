@@ -313,6 +313,8 @@ input[type="submit"]:active{
         position: absolute;
         top: 600px;
         width: 370px;
+        margin-top: 100px;
+        
     }
     
     input[type="submit"]{

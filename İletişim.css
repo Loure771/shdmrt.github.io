@@ -367,7 +367,7 @@ input[type="submit"]:active{
     .box{
         position: absolute;
         width: 370px;
-        top: 600px;
+        top: 800px;
         
         
     }
@@ -391,7 +391,7 @@ input[type="submit"]:active{
     }
     
     .content{
-        margin-top: -600px;
+        margin-top: -650px;
         padding-bottom: 50px;
     }
     

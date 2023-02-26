@@ -97,6 +97,7 @@ body{
     position: relative;
     min-height: 100vh;
     padding: 50px 100px;
+    flex-wrap: wrap;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -398,8 +399,8 @@ input[type="submit"]:active{
     }
     
     .froter{
-        position: absolute;
-        margin-bottom: -1100px;
+        margin-bottom: -100%;
+        
         
     }
 }

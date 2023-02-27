@@ -60,16 +60,18 @@ body{
     color: #0ef;
 }
 
-//*navbar2 kısmı mobile görünümü *//
+/*navbar2 kısmı mobile görünümü */
 
 .navbar2{
-    margin-left: 100px;
+    display: none;
+    margin-left: 50px;
 }
 
 
 .navbar2 ul li{
     background-color: #1f242d;
     display: block;
+     width: 300px;
     font-size: 18px;
     line-height: 45px;
     margin-top: 10px; 
@@ -79,7 +81,6 @@ body{
     text-align: center;
     text-decoration: none;
     font-weight: 500;
-    transition: 0.3s;
 }
 
 .navbar2 ul li:hover{
@@ -94,7 +95,7 @@ body{
 .navbar2 a{
     text-align: center;
     display: block;
-    width: 101px;
+     width: 300px;
     height: 63px;
     padding: 8px 5px;
     font-size: 20px;
@@ -107,12 +108,12 @@ body{
 .navbar2 i{
     display: none;
     text-align: center;
-    width: 101px;
+    width: 300px;
     margin-left: 27px;
     display: non;
     color: #0ef;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 40px;
     border: 1px solid #0ef;
     padding: 5px;
     margin: 10px 0;
@@ -126,8 +127,10 @@ body{
     text-align: center;
     justify-content: center;
     margin: 10px 0;
-    width: 100px;
+     width: 300px;
 }
+
+
 
 
 @keyframes slideRight{
@@ -416,7 +419,10 @@ input[type="submit"]:active{
     
     
     .navbar a{display: none;}
+    .navbar2{display: block;}
     .navbar2 i{display: block;}
+    .navbar{display: none;}
+    .logo{display: none;}
     
     .navbar2 i:hover{
         background: #0ef;

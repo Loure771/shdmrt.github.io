@@ -25,3 +25,8 @@ window.addEventListener("scroll", () => {
         navbar.classList.remove('navbar-active');
     }
 })
+
+$(window).on('load',function(){
+    $(".loader").fadeOut(1000);
+    $(".content").fadeIn(8000);
+});

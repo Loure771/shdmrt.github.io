@@ -1,12 +1,19 @@
-const btn1 = document.getElementById("btn1");
-const list = document.getElementById("list");
+const menBtn = document.getElementById('menu-btn');
+const navbar = document.getElementById('navbar');
+const menu = document.querySelector('.menu');
 
-list.style.display = "none";
+const offset = 50;
 
-btn1.addEventListener("click", (event) => {
-    if (list.style.display == "none"){
-        list.style.display = "block";
+menBtn.addEventListener('click', () => {
+    menu.classList.toggle('menu-open');
+});
+
+window.addEventListener("scroll", () => {
+    if (pageXOffset > offset) {
+        
+        navbar.classList.add('navbar-active');
     } else{
-        list.style.display = "none";
+        
+        navbar.classList.remove('navbar-active');
     }
 })

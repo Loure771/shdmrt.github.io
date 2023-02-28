@@ -19,31 +19,24 @@ body{
     height: 100%;
 }
 
-.header{
-    background-color: #1f242d;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 10%;
-    display: flex;
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+header{
+    min-height: 15vh;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
 }
 
-.logo{
-    font-size: 25px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: default;
-    opacity: 0;
-    animation: slideRight 1s ease forwards;
+.container-inner{
+    margin: 0 auto;
+    width: 100%;
 }
 
-.navbar a{
-    display: inline-block;
+.container a{
     font-size: 18px;
     color: #fff;
     text-decoration: none;
@@ -52,82 +45,199 @@ body{
     transition: 0.3s;
     opacity: 0;
     animation: slideTop 0.5s ease forwards;
-    animation-delay: calc(0.2s * var(--i))
+    animation-delay: calc(0.2s * var(--i));
 }
 
-.navbar a:hover,
-.navbar a.active{
+.container a:hover,
+.container .active{
     color: #0ef;
 }
 
-/*navbar2 kısmı mobile görünümü */
-
-.navbar2{
-    display: none;
-    margin-left: 50px;
+.container{
+    margin-left: 690px;
+    max-width: 1350px;
+    position: relative;
+    display: flex;
+    grid-auto-columns: 1fr 5fr 1fr;
+    justify-content: space-between;
+    align-items: center;
 }
 
-
-.navbar2 ul li{
-    background-color: #1f242d;
-    display: block;
-     width: 300px;
-    font-size: 18px;
-    line-height: 45px;
-    margin-top: 10px; 
-    border: 2px solid #0ef;
-    transition: 0.5s ease;
-    color: #0ef;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 500;
+.container-inner{
+    max-width: 1000px;
 }
 
-.navbar2 ul li:hover{
-    background: #0ef;
-    box-shadow: 0 0 20px #0ef;
-}
-
-.navbar2 ul li a:hover{
-    color: #1f242d;
-}
-
-.navbar2 a{
-    text-align: center;
-    display: block;
-     width: 300px;
-    height: 63px;
-    padding: 8px 5px;
-    font-size: 20px;
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2em;
+    z-index: 9;
+    transition: 0.7s;
     color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
 }
 
-.navbar2 i{
-    display: none;
-    text-align: center;
-    width: 300px;
-    margin-left: 27px;
-    display: non;
+.container-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.container ul{
+    width: 100%;
+    margin: 0 1em;
+}
+
+.container ul:nth-child(2){
+    text-align: right;
+}
+
+.container ul li{
+    display: inline-block;
+    margin: 0 0.7em;
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    font-weight: 600;
+    color: #fff;
+}
+
+nav a:hover{
     color: #0ef;
+}
+
+.input-warp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 0;
+}
+
+form{
+    z-index: 2;
+}
+
+form input,
+form button{
+    background: none;
+    border: none;
+    color: #fff;
+}
+
+form button{
     cursor: pointer;
-    font-size: 40px;
+}
+
+form input::placeholder{
+    color: #fff;
+}
+
+form input:focus{
+    outline: none;
+}
+
+#menu-btn{
+    display: none;
+    font-size: 30px;
     border: 1px solid #0ef;
     padding: 5px;
-    margin: 10px 0;
-    border-radius: 15%;}
-
-.navbar2 a.active{
     color: #0ef;
 }
 
-.navbar2 i:focus{
+.fa-bars{
+    margin-right: 600px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: right;
+}
+
+#menu-btn:hover{
+    color: #1f242d;
+    background-color: #0ef;
+}
+
+.menu{
+    background: #111;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     text-align: center;
-    justify-content: center;
-    margin: 10px 0;
-     width: 300px;
+    font-size: 1.3em;
+    height: 0;
+    opacity: 0;
+    transition: 0.7s cubic-bezier(.74,-0.03,.83,.67);
+    overflow: hidden;
+}
+
+.logo{
+    width: 250px;
+    height: 250px;
+}
+
+.menu ul, .menu form{
+    margin: 1em auto;
+}
+
+.menu li{
+    margin: 1em 0;
+}
+
+.menu > div{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding: 6em 1em 3em 1em;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.menu > div::-webkit-scrollbar{
+    display: none;
+}
+
+.menu .social-media{
+    margin: 2em 0;
+}
+
+.social-media li{
+    display: inline-block;
+    margin: 0 0.5em;
+}
+
+/*Classes for javascript */
+
+.menu-open{
+    height: 100vh;
+    opacity: 1;
+}
+
+.navbar-active{
+    background: #111;
+    padding: 1em;
+}
+
+@media screen and (max-width: 800px) {
+    .container-inner{
+        display: none;
+    }
+    
+    .container{
+        grid-auto-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .menu form{
+        display: none;
+    }
 }
 
 
@@ -178,7 +288,7 @@ body{
     color:#fff;
 }
 
-.content , .container{
+.content , .container2{
     margin-top: 30px;
 }
 
@@ -186,7 +296,7 @@ body{
     font-weight: 300;color: #fff;
 }
 
-.container{
+.container2{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -194,19 +304,19 @@ body{
     margin-top: 30px;
 }
 
-.container .contactInfo{
+.container2 .contactInfo{
     width: 50%;
     display: flex;
     flex-direction: column;
 }
 
-.container .contactInfo .box1{
+.container2 .contactInfo .box1{
     position: relative;
     padding: 20px 0;
     display: flex;
 }
 
-.container .contactInfo .box1 .icon{
+.container2 .contactInfo .box1 .icon{
     color: #1f242f;
     min-width: 60px;
     height: 60px;
@@ -221,7 +331,7 @@ body{
     animation-delay: calc(0.2s * var(--i))
 }
 
-.container .contactInfo .box1 .text {
+.container2 .contactInfo .box1 .text {
     display: flex;
     margin-left: 20px;
     font-size: 16px;
@@ -230,7 +340,7 @@ body{
     font-weight: 300;
 }
 
-.container .contactInfo .box1 .text h3{
+.container2 .contactInfo .box1 .text h3{
     font-weight: 500;
     color: #45f3ff;
 }
@@ -242,6 +352,7 @@ body{
     background: #1c1c1c;
     border-radius: 8px;
     overflow: hidden;
+    z-index: 1;
 }
 
 .box:before{
@@ -416,18 +527,11 @@ input[type="submit"]:active{
 /*telefon görünümü */
 
 @media only screen and (max-width:768px){
-    
-    
-    .navbar a{display: none;}
-    .navbar2{display: block;}
-    .navbar2 i{display: block;}
-    .navbar{display: none;}
-    .logo{display: none;}
-    
-    .navbar2 i:hover{
-        background: #0ef;
-        color: #1f242d;
-    }
+        
+    #menu-btn{
+        display: block;
+        margin-left: -300px;
+}
     
     .box{
         position: absolute;

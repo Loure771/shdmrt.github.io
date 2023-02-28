@@ -15,31 +15,24 @@ body{
     color: #fff;
 }
 
-.header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 10%;
-    background-color: #1f242d;
-    display: flex;
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+header{
+    min-height: 25px;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
 }
 
-.logo{
-    font-size: 25px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: default;
-    opacity: 0;
-    animation: slideRight 1s ease forwards;
+.container-inner{
+    margin: 0 auto;
+    width: 100%;
 }
 
-.navbar a{
-    display: inline-block;
+.container a{
     font-size: 18px;
     color: #fff;
     text-decoration: none;
@@ -49,12 +42,188 @@ body{
     opacity: 0;
     animation: slideTop 0.5s ease forwards;
     animation-delay: calc(0.2s * var(--i));
-    
 }
 
-.navbar a:hover,
-.navbar a.active{
+.container a:hover,
+.container .active{
     color: #0ef;
+}
+
+.container{
+    margin-left: 690px;
+    max-width: 1350px;
+    position: relative;
+    display: flex;
+    grid-auto-columns: 1fr 5fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-inner{
+    max-width: 1000px;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2em;
+    z-index: 9;
+    transition: 0.7s;
+    color: #fff;
+}
+
+.container-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.container ul{
+    width: 100%;
+    margin: 0 1em;
+}
+
+.container ul:nth-child(2){
+    text-align: right;
+}
+
+.container ul li{
+    display: inline-block;
+    margin: 0 0.7em;
+}
+
+nav a{
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+    font-weight: 600;
+    color: #fff;
+}
+
+nav a:hover{
+    color: #0ef;
+}
+
+.input-warp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 0;
+}
+
+form{
+    z-index: 2;
+}
+
+form input,
+form button{
+    background: none;
+    border: none;
+    color: #fff;
+}
+
+form button{
+    cursor: pointer;
+}
+
+form input::placeholder{
+    color: #fff;
+}
+
+form input:focus{
+    outline: none;
+}
+
+#menu-btn{
+    display: none;
+    font-size: 30px;
+    border: 1px solid #0ef;
+    padding: 5px;
+    color: #0ef;
+}
+
+.fa-bars{
+    margin-right: 600px;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: right;
+}
+
+#menu-btn:hover{
+    color: #1f242d;
+    background-color: #0ef;
+}
+
+.menu{
+    background: #111;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3em;
+    height: 0;
+    opacity: 0;
+    transition: 0.7s cubic-bezier(.74,-0.03,.83,.67);
+    overflow: hidden;
+}
+
+.logo{
+    width: 250px;
+    height: 250px;
+}
+
+.menu ul, .menu form{
+    margin: 1em auto;
+}
+
+.menu li{
+    margin: 1em 0;
+}
+
+.menu > div{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding: 6em 1em 3em 1em;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.menu > div::-webkit-scrollbar{
+    display: none;
+}
+
+.menu .social-media{
+    margin: 2em 0;
+}
+
+.social-media li{
+    display: inline-block;
+    margin: 0 0.5em;
+}
+
+/*Classes for javascript */
+
+.menu-open{
+    height: 100vh;
+    opacity: 1;
+}
+
+.navbar-active{
+    background: #111;
+    padding: 1em;
+}
+
+@media screen and (max-width: 800px) {
+    .container-inner{
+        display: none;
+    }
 }
 
 .png{
@@ -248,6 +417,11 @@ body{
 /*telefon görünümü */
 
 @media only screen and (max-width:768px){
+    
+    #menu-btn{
+        display: block;
+        margin-left: -320px;
+}
     
     .home-img{
         display: none;

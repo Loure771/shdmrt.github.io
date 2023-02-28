@@ -25,7 +25,7 @@ ul{
 }
 
 header{
-    min-height: 15vh;
+    min-height: 3vh;
     justify-content: space-between;
     align-items: center;
     z-index: 100;

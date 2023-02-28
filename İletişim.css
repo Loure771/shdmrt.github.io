@@ -228,17 +228,8 @@ form input:focus{
     .container-inner{
         display: none;
     }
-    
-    .container{
-        grid-auto-columns: 1fr 1fr;
-    }
 }
 
-@media screen and (min-width: 800px){
-    .menu form{
-        display: none;
-    }
-}
 
 
 
@@ -530,7 +521,7 @@ input[type="submit"]:active{
         
     #menu-btn{
         display: block;
-        margin-left: -300px;
+        margin-left: -400px;
 }
     
     .box{

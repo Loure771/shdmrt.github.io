@@ -355,6 +355,7 @@ form input:focus{
     align-items: center;
     margin-left: 50%;
     margin-top: 318px;
+
 }
 
 .ring{
@@ -504,9 +505,11 @@ form input:focus{
         display: none;
     }
     
-    .logo{display: none;
-    animation: none;}
-    
     .navbar a{margin-left: 15px;}
+    
+    .ring{
+        width: 100px;
+        height: 100px;
+    }
     
     }

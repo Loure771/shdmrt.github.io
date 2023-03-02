@@ -334,6 +334,8 @@ form input:focus{
 }
 
 .froter{
+    color: #C0C0C0;
+    font-style: italic;
     padding-top: 30px;
     text-align: center;
     margin-bottom: 0;
@@ -511,5 +513,7 @@ form input:focus{
         width: 100px;
         height: 100px;
     }
+    
+    
     
     }

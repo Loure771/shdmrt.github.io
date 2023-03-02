@@ -27,6 +27,6 @@ window.addEventListener("scroll", () => {
 })
 
 $(window).on('load',function(){
-    $(".loader").fadeOut(1000);
-    $(".content").fadeIn(10000);
+    $(".loader").fadeOut(1350);
+    $(".content").fadeIn(4850);
 });

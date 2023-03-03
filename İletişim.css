@@ -53,6 +53,10 @@ header{
     color: #0ef;
 }
 
+.active{
+    color: #0ef;
+}
+
 .container{
     margin-left: 690px;
     max-width: 1350px;
